@@ -1,30 +1,47 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
-  <router-view/>
+  <!-- <nav> -->
+    <!-- <router-link to="/">Home</router-link> | -->
+    <!-- <router-link to="/about">About</router-link> -->
+  <!-- </nav> -->
+
+  <div class="container fluid">
+    <div class="text-center" style="margin: 10px auto 10px auto;">
+      <div class="mt-5">
+        <div class="text-center">
+          <div class="row gl-2">
+                <div class="col">
+                  <span class="me-3"> <router-link :to="{name: 'Home'}">Projecs</router-link></span>  |
+                  <span class="ms-3"> <router-link :to="{name: 'CreateTodo'}">Add New Project</router-link></span>  
+                </div>
+            </div>
+        </div>
+        </div>
+      </div>
+      <router-view/>
+    </div>
 </template>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+<script setup>
+import { computed, ref } from 'vue';
+import { useStore } from 'vuex';
+const store =  useStore()
 
-nav {
-  padding: 30px;
-}
+const todos = computed(() => store.state.todos)
 
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
 
-nav a.router-link-exact-active {
-  color: #42b983;
+</script>
+
+<style scoped>
+a{
+  text-decoration: none;
+  padding: 4px;
+
+}
+a:hover{
+  border-bottom: 4px solid antiquewhite;
+}
+a:active{
+  color: antiquewhite;
+  text-decoration: underline;
 }
 </style>
