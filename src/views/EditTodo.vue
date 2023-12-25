@@ -49,7 +49,7 @@ const updateTodo = () =>{
     console.log(updatedTodo)
     store.dispatch('updateTodo', updatedTodo)
     console.log("dispaccc")
-    router.push('/home')
+    router.push('/')
 }
 
 

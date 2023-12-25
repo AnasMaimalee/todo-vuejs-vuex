@@ -1,7 +1,6 @@
 <template>
-    <div class="container fluid col-md-6">
-       <div class="text-center">
-            <p>Home Page</p>
+    <div class="container fluid col-md-8">
+       <div class="text-center" style="margin-top: 70px;">
             <todo />
        </div>
     </div>

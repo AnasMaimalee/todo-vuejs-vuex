@@ -1,28 +1,51 @@
 import EditTodoVue from '@/views/EditTodo.vue'
 import HomeVue from '@/views/Home.vue'
 import NewTodoVue from '@/views/NewTodo.vue'
+import PracticeVue from '@/views/Practice.vue'
+import MapVue from '@/views/Map.vue'
+import ShowSingleTodoVue from '@/views/ShowSingleTodo.vue'
 import { createRouter, createWebHistory } from 'vue-router'
 
 
 const routes = [
  {
-  path: '/home',
+  path: '/',
   name: "Home",
   component: HomeVue
  },
 
  {
-  path: '/create-Todo',
+  path: '/home/create-Todo',
   name: 'CreateTodo',
   component: NewTodoVue
  },
+ 
+ {
+   path: '/home/todo/:id',
+   name: 'TodoShow',
+   component: ShowSingleTodoVue,
+   props: true
+ },
 
 {
-  path: '/edit/:id',
+  path: '/todo/edit/:id',
   name: 'EditTodo',
   component: EditTodoVue,
   props: true
+},
+
+{
+  path: '/home/practice',
+  name: 'Practice',
+  component: PracticeVue
+},
+
+{
+  path: '/home/modules/mapGetters',
+  name: 'mapGetters',
+  component: MapVue
 }
+
 
 ]
 

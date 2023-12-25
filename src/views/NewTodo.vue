@@ -38,13 +38,14 @@ const createTodo = () =>{
     const newTodo = {
         id:todoLength.value +1,
         title: todoTitle.value,
-        body: todoBody.value
+        body: todoBody.value,
+        isCompleted: false
     }
     store.dispatch('createTodo', newTodo)
     todoBody.value = ''
     todoTitle.value=''
 
-    router.push('/home')
+    router.push('/')
 }
 const handleSubmit = (event) =>{
     event.preventDefault()
